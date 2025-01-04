@@ -15,6 +15,9 @@ Minim diam at ipsum tempor. Augue feugait luptatum in lorem tincidunt sed eros e
 Erat no euismod diam elitr diam erat velit. Diam kasd ipsum sit est laoreet diam commodo laoreet exerci congue hendrerit in vel et takimata accusam est. Elitr sanctus volutpat id at clita kasd et ut sit te et gubergren sadipscing eos takimata sadipscing.
 
 
+
+rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
+
 #### [[⬆]](#toc) <a name='recommended_sources'>Дополнительные источники</a>
 
 - [Systemd - Википедия](https://ru.wikipedia.org/wiki/Systemd)
