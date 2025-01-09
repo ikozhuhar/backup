@@ -14,6 +14,31 @@ Minim diam at ipsum tempor. Augue feugait luptatum in lorem tincidunt sed eros e
 
 Erat no euismod diam elitr diam erat velit. Diam kasd ipsum sit est laoreet diam commodo laoreet exerci congue hendrerit in vel et takimata accusam est. Elitr sanctus volutpat id at clita kasd et ut sit te et gubergren sadipscing eos takimata sadipscing.
 
+### Тестовый стенд:
+
+![image](https://github.com/user-attachments/assets/ecd995b2-da3f-4f61-b28d-fc495362a613)
+
+
+Устанавливаем borgbackup на сервер 
+
+```
+apt install borgbackup
+```
+
+![image](https://github.com/user-attachments/assets/8e4b67df-7ecf-43d9-a74b-7194cb55dcb6)
+
+
+
+Устанавливаем borgbackup на сервер 
+
+```
+apt install borgbackup
+```
+
+![image](https://github.com/user-attachments/assets/1ec2760a-1729-4db1-a221-f01155998567)
+
+
+
 ### Ручное копирование
 
 ```
