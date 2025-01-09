@@ -19,7 +19,7 @@ Erat no euismod diam elitr diam erat velit. Diam kasd ipsum sit est laoreet diam
 ![image](https://github.com/user-attachments/assets/ecd995b2-da3f-4f61-b28d-fc495362a613)
 
 
-Устанавливаем borgbackup на сервер 
+### Устанавливаем borgbackup на сервер 
 
 ```
 apt install borgbackup
@@ -27,9 +27,22 @@ apt install borgbackup
 
 ![image](https://github.com/user-attachments/assets/8e4b67df-7ecf-43d9-a74b-7194cb55dcb6)
 
+```
+sudo mkdir /var/backup
+sudo useradd -s /bin/bash -d /home/borg -m borg
+sudo chown borg:borg /var/backup/
+sudo passwd borg
+su - borg
+mkdir .ssh
+touch .ssh/authorized_keys
+chmod 700 .ssh
+chmod 600 .ssh/authorized_keys
+
+```
 
 
-Устанавливаем borgbackup на сервер 
+
+### Устанавливаем borgbackup на клиенте
 
 ```
 apt install borgbackup
