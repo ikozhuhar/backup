@@ -51,6 +51,9 @@ apt install borgbackup
 ![image](https://github.com/user-attachments/assets/1ec2760a-1729-4db1-a221-f01155998567)
 
 
+![image](https://github.com/user-attachments/assets/92e1dbed-3304-4e87-800c-be8055eae65d)
+
+
 
 ### Ручное копирование
 
