@@ -213,7 +213,7 @@ rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
 ![image](https://github.com/user-attachments/assets/79e2285a-a9cd-4dbb-878f-5f4f98b7712d)
 
 
-
+<br/>
 
 #### [[⬆]](#toc) <a name='recommended_sources'>Дополнительные источники</a>
 
