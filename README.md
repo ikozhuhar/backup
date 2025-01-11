@@ -206,6 +206,16 @@ borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /mnt/borg
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='8'>Автоматизация создания бэкапов с помощью systemd</a>
 
+```ruby
+ vi /etc/systemd/system/borg-backup.service
+```
+![image](https://github.com/user-attachments/assets/2b4c1ba0-db3e-4983-ad09-97348b47300f)
+
+``ruby
+vi /etc/systemd/system/borg-backup.timer
+```
+![image](https://github.com/user-attachments/assets/cf394fd3-a269-4490-ba5e-086b1cea3d20)
+
 
 <br/>
 
