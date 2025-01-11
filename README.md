@@ -7,8 +7,9 @@
 3. [Устанавливаем borgbackup на сервер ](#3)
 4. [Устанавливаем borgbackup на клиенте](#4)
 5. [Создание репозитория](#5)
-6. [Восстановление данных из резервной копии](#6)
-7. [Дополнительные источники](#recommended_sources)
+6. [Создание резервной копии](#6)
+7. [Восстановление данных из резервной копии](#7)
+8. [Дополнительные источники](#recommended_sources)
 
 Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est lorem ipsum dolor sit amet.
 
@@ -106,7 +107,7 @@ borg init --encryption=repokey borg@192.168.56.160:/var/backup/
 После успешного выполнения команды, проверить на сервере наличие созданного репозитория.
 
 
-**Создание резервной копии**
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='6'>Создание резервной копии</a>
 
 ```ruby
 # Созадание копии всей директории
@@ -136,7 +137,7 @@ borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 ![image](https://github.com/user-attachments/assets/3ef67d64-35ae-43a2-84d0-9d4d02283aac)
 
 
-### [:diamond_shape_with_a_dot_inside:](#toc) <a name='6'>Восстановление данных из резервной копии</a>
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='7'>Восстановление данных из резервной копии</a>
 
 Перед восстановлением, рекомендуется создать отдельную директорию и перейти в нее:
 
