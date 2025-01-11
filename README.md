@@ -2,8 +2,8 @@
 
 #### <a name='toc'>Содержание</a>
 
-1. [Система инициализации](#initialization_system)
-2. [Управление сервисами при использовании systemd](#managing_services)
+1. [Тестовый стенд](#1)
+2. [Установка и настройка borgbackup](#2)
 3. [Создание unit-файла для мониторинга логов](#create_unit_file)
 4. [Установить spawn-fcgi и создать unit-файл](#create_init_spawn)
 5. [Дополнительные источники](#recommended_sources)
@@ -14,9 +14,19 @@ Minim diam at ipsum tempor. Augue feugait luptatum in lorem tincidunt sed eros e
 
 Erat no euismod diam elitr diam erat velit. Diam kasd ipsum sit est laoreet diam commodo laoreet exerci congue hendrerit in vel et takimata accusam est. Elitr sanctus volutpat id at clita kasd et ut sit te et gubergren sadipscing eos takimata sadipscing.
 
-### Тестовый стенд:
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='1'>Тестовый стенд</a>
 
 ![image](https://github.com/user-attachments/assets/ecd995b2-da3f-4f61-b28d-fc495362a613)
+
+
+### Установка и настройка borgbackup
+
+Установка как на сервере, так и на клиенте выполняется одинаково:
+```ruby
+sudo -i
+apt update
+apt install borgbackup
+```
 
 
 ### Устанавливаем borgbackup на сервер 
