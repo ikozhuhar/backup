@@ -124,7 +124,7 @@ borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_
 ![image](https://github.com/user-attachments/assets/797d273a-0910-4b2f-8976-5c93fe0e8afd)
 ![image](https://github.com/user-attachments/assets/64fc6cd2-0815-45b0-910f-248c91a8aee5)
 
-Смотрим, что у нас получилось
+**Смотрим, что у нас получилось**
 
 ```ruby
 borg list borg@192.168.56.160:/var/backup/
@@ -132,7 +132,7 @@ borg list borg@192.168.56.160:/var/backup/
 
 ![image](https://github.com/user-attachments/assets/5f309f55-7156-472b-8605-6bd984daf266)
 
-Смотрим список файлов
+**Смотрим список файлов**
 
 ```ruby
 borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
