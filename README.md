@@ -6,7 +6,8 @@
 2. [Установка и настройка borgbackup](#2)
 3. [Устанавливаем borgbackup на сервер ](#3)
 4. [Устанавливаем borgbackup на клиенте](#4)
-5. [Дополнительные источники](#recommended_sources)
+5. [Восстановление данных из резервной копии](#5)
+6. [Дополнительные источники](#recommended_sources)
 
 Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est lorem ipsum dolor sit amet.
 
@@ -108,7 +109,7 @@ borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 ![image](https://github.com/user-attachments/assets/3ef67d64-35ae-43a2-84d0-9d4d02283aac)
 
 
-**Восстановление данных из резервной копии**
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='5'>Восстановление данных из резервной копии</a>
 
 Перед восстановлением, рекомендуется создать отдельную директорию и перейти в нее:
 
