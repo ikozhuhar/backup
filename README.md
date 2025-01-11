@@ -224,7 +224,7 @@ systemctl enable borg-backup.timer
 systemctl start borg-backup.timer
 ```
 
-**Проверяем работу таймера**
+_Проверяем работу таймера_
 
 ```ruby
 systemctl list-timers --all
