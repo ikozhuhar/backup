@@ -158,7 +158,7 @@ borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 etc/passwd etc/shadow etc/group
 ```
 
-Для примера попробуем сделать копию файлов passwd, shadow, group и восстановить их.
+**Для примера попробуем сделать копию файлов passwd, shadow, group и восстановить их.**
 
 ```ruby
 borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_%H:%M:%S}" /etc/shadow /etc/passwd /etc/group
@@ -166,27 +166,19 @@ borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_
 
 ![image](https://github.com/user-attachments/assets/af3105ab-8e1a-4041-b084-8a0f9c45b25a)
 
-Смотрим результат на сервере
+**Смотрим результат на сервере**
 
 ```ruby
 borg list borg@192.168.56.160:/var/backup/
 ```
 ![image](https://github.com/user-attachments/assets/c2a6d0fd-acbe-4b93-994a-ef0f34d997ce)
 
-Востанавлиаем файлы
+**Востанавливаем файлы**
 
 ```ruby
 borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_21:11:59 etc/passwd etc/shadow etc/group
 ```
 ![image](https://github.com/user-attachments/assets/ef82af85-a081-4d64-8bf5-2470d490bbe8)
-
-
-
-
-
-
-
-![image](https://github.com/user-attachments/assets/c2a3bf95-9a30-4390-ad4f-74c84e325452)
 
 ```ruby
 batcat ./etc/passwd
