@@ -54,14 +54,84 @@ apt install borgbackup
 ![image](https://github.com/user-attachments/assets/92e1dbed-3304-4e87-800c-be8055eae65d)
 
 
+Запускаем Бэкап
+
+```ruby
+borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_%H:%M:%S}" /etc
+```
+
+![image](https://github.com/user-attachments/assets/797d273a-0910-4b2f-8976-5c93fe0e8afd)
+![image](https://github.com/user-attachments/assets/64fc6cd2-0815-45b0-910f-248c91a8aee5)
+
+Смотрим, что у нас получилось
+
+```ruby
+borg list borg@192.168.56.160:/var/backup/
+```
+
+![image](https://github.com/user-attachments/assets/5f309f55-7156-472b-8605-6bd984daf266)
+
+Смотрим список файлов
+
+```ruby
+borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
+```
+
+![image](https://github.com/user-attachments/assets/79e2285a-a9cd-4dbb-878f-5f4f98b7712d)
+![image](https://github.com/user-attachments/assets/3ef67d64-35ae-43a2-84d0-9d4d02283aac)
+
+
+Восстановление данных из резервной копии
+
+Перед восстановлением, рекомендуется создать отдельную директорию и перейти в нее:
+
+```ruby
+mkdir /mnt/borgrestore
+cd /mnt/borgrestore
+```
+
+Для восстановления всех файлов из доступного архива ввести команду:
+
+```ruby
+borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
+```
+
+**Для восстановления отдельных файлов или директорий из архива ввести команду:**
+
+```ruby
+borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 etc/passwd
+```
+
+**Монтирование резервной копии в локальную папку (альтернативный вариант восстановления данных)**
+
+borg позволяет смонтировать репозиторий в локальную файловую систему и работать с архивом как с обычной папкой.
+
+Для этого требуется создать точку (директорию) монтирования и подмонтировать в нее требуемую резервную копию с сервера:
+
+```ruby
+mkdir /mnt/borgmount
+borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /mnt/borgmount
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Ручное копирование
 
 ```
 rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
 ```
-
-![image](https://github.com/user-attachments/assets/79e2285a-a9cd-4dbb-878f-5f4f98b7712d)
 
 
 
