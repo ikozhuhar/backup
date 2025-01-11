@@ -217,6 +217,34 @@ vi /etc/systemd/system/borg-backup.timer
 ![image](https://github.com/user-attachments/assets/cf394fd3-a269-4490-ba5e-086b1cea3d20)
 
 
+_Включаем и запускаем службу таймера_
+
+```ruby
+systemctl enable borg-backup.timer 
+systemctl start borg-backup.timer
+```
+
+**Проверяем работу таймера**
+
+```ruby
+systemctl list-timers --all
+```
+
+![image](https://github.com/user-attachments/assets/67a25210-b19e-45ed-bc35-6006d99f7ce2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='9'>Ручное копирование</a>
