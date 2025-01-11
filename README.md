@@ -66,6 +66,7 @@ chown borg:borg /var/backup/
 
 <br/>
 
+<br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='4'>Устанавливаем borgbackup на клиенте</a>
 
@@ -86,6 +87,7 @@ ssh-keygen
 
 После генерации ключа его нужно будет скопировать и разместить на сервере в файл /home/borg/.ssh/authorized_keys
 
+<br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='5'>Создание репозитория</a>
 
@@ -107,6 +109,7 @@ borg init --encryption=repokey borg@192.168.56.160:/var/backup/
 
 После успешного выполнения команды, проверить на сервере наличие созданного репозитория.
 
+<br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='6'>Создание резервной копии</a>
 
@@ -137,6 +140,7 @@ borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 ![image](https://github.com/user-attachments/assets/805c30a7-4bbc-46ad-9353-2e7b91e23d4c)
 ![image](https://github.com/user-attachments/assets/3ef67d64-35ae-43a2-84d0-9d4d02283aac)
 
+<br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='7'>Восстановление данных из резервной копии</a>
 
@@ -199,6 +203,7 @@ mkdir /mnt/borgmount
 borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /mnt/borgmount
 ```
 
+<br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='2'>Ручное копирование</a>
 
