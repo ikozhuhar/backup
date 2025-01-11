@@ -74,7 +74,7 @@ apt install borgbackup
 ![image](https://github.com/user-attachments/assets/1ec2760a-1729-4db1-a221-f01155998567)
 
 ```ruby
- # Генерируем SSH-ключ
+# Генерируем SSH-ключ
 ssh-keygen
 ```
 ![image](https://github.com/user-attachments/assets/92e1dbed-3304-4e87-800c-be8055eae65d)
@@ -104,8 +104,7 @@ borg list borg@192.168.56.160:/var/backup/
 ```ruby
 borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 ```
-
-![image](https://github.com/user-attachments/assets/79e2285a-a9cd-4dbb-878f-5f4f98b7712d)
+![image](https://github.com/user-attachments/assets/805c30a7-4bbc-46ad-9353-2e7b91e23d4c)
 ![image](https://github.com/user-attachments/assets/3ef67d64-35ae-43a2-84d0-9d4d02283aac)
 
 
@@ -160,6 +159,7 @@ borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /mnt/borg
 ```ruby
 rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
 ```
+![image](https://github.com/user-attachments/assets/79e2285a-a9cd-4dbb-878f-5f4f98b7712d)
 
 
 
