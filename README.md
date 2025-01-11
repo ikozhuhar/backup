@@ -2,6 +2,8 @@
 <img src="https://github.com/ikozhuhar/backup/blob/main/img/backup.png">
 </p>
 
+<br/>
+
 ### :diamond_shape_with_a_dot_inside: <a name='toc'>Содержание</a>
 
 1. [Тестовый стенд](#1)
