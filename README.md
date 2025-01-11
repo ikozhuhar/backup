@@ -239,18 +239,6 @@ systemctl list-timers --all
 ![image](https://github.com/user-attachments/assets/67a25210-b19e-45ed-bc35-6006d99f7ce2)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='9'>Ручное резервное копирование</a>
@@ -263,12 +251,7 @@ rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
 
 <br/>
 
-#### [[⬆]](#toc) <a name='recommended_sources'>Дополнительные источники</a>
+### [[⬆]](#toc) <a name='recommended_sources'>Дополнительные источники</a>
 
 - [Установка и настройка BORG backup](https://www.bytelink.ru/byte-wiki/rezervirovanie-i-backups/ustanovka-i-nastrojka-sistemy-rezervnykh-kopij-borg)
-- [Система инициализации - systemd](https://basis.gnulinux)
-- [Systemd. Библия сисадмина](https://habr.com/ru/companies/)
-- [Что такое система инициализации](https://pikabu.ru/story)
-- Весь Linux Для тех, кто хочет стать профессионалом, стр.324
-
-https://dzen.ru/a/X_1FafmIRRpCKDj1
+- [Теория и практика бэкапов с Borg](https://habr.com/ru/companies/flant/articles/420055/)
