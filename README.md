@@ -9,8 +9,9 @@
 5. [Создание репозитория](#5)
 6. [Создание резервной копии](#6)
 7. [Восстановление данных из резервной копии](#7)
-8. [Ручное копирование](#8)
-9. [Дополнительные источники](#recommended_sources)
+8. [Автоматизация создания бэкапов с помощью systemd](#8)
+9. [Ручное копирование](#9)
+10. [Дополнительные источники](#recommended_sources)
 
 Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est lorem ipsum dolor sit amet.
 
@@ -203,7 +204,12 @@ borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /mnt/borg
 
 <br/>
 
-### [:diamond_shape_with_a_dot_inside:](#toc) <a name='2'>Ручное копирование</a>
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='9'>Автоматизация создания бэкапов с помощью systemd</a>
+
+
+<br/>
+
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='9'>Ручное копирование</a>
 
 ```ruby
 rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
