@@ -125,7 +125,7 @@ borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_
 ![image](https://github.com/user-attachments/assets/797d273a-0910-4b2f-8976-5c93fe0e8afd)
 ![image](https://github.com/user-attachments/assets/64fc6cd2-0815-45b0-910f-248c91a8aee5)
 
-**Смотрим, что у нас получилось**
+_Смотрим, что у нас получилось_
 
 ```ruby
 borg list borg@192.168.56.160:/var/backup/
@@ -133,7 +133,7 @@ borg list borg@192.168.56.160:/var/backup/
 
 ![image](https://github.com/user-attachments/assets/5f309f55-7156-472b-8605-6bd984daf266)
 
-**Смотрим список файлов**
+_Смотрим список файлов_
 
 ```ruby
 borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
@@ -152,19 +152,19 @@ mkdir /mnt/borgrestore
 cd /mnt/borgrestore
 ```
 
-**Для восстановления всех файлов из доступного архива ввести команду:**
+_Для восстановления всех файлов из доступного архива ввести команду:_
 
 ```ruby
 borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 ```
 
-**Для восстановления отдельных файлов или директорий из архива ввести команду:**
+_Для восстановления отдельных файлов или директорий из архива ввести команду:_
 
 ```ruby
 borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 etc/passwd etc/shadow etc/group
 ```
 
-**Для примера попробуем сделать копию файлов passwd, shadow, group и восстановить их.**
+_Для примера попробуем сделать копию файлов passwd, shadow, group и восстановить их._
 
 ```ruby
 borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_%H:%M:%S}" /etc/shadow /etc/passwd /etc/group
@@ -172,14 +172,14 @@ borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_
 
 ![image](https://github.com/user-attachments/assets/af3105ab-8e1a-4041-b084-8a0f9c45b25a)
 
-**Смотрим результат на сервере**
+_Смотрим результат на сервере_
 
 ```ruby
 borg list borg@192.168.56.160:/var/backup/
 ```
 ![image](https://github.com/user-attachments/assets/c2a6d0fd-acbe-4b93-994a-ef0f34d997ce)
 
-**Востанавливаем файлы**
+_Востанавливаем файлы_
 
 ```ruby
 borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_21:11:59 etc/passwd etc/shadow etc/group
@@ -193,7 +193,7 @@ batcat ./etc/passwd
 
 
 
-**Монтирование резервной копии в локальную папку (альтернативный вариант восстановления данных)**
+_Монтирование резервной копии в локальную папку (альтернативный вариант восстановления данных)_
 
 Borg позволяет смонтировать репозиторий в локальную файловую систему и работать с архивом как с обычной папкой. Для этого требуется создать точку (директорию) монтирования и подмонтировать в нее требуемую резервную копию с сервера:
 
