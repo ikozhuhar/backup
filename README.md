@@ -47,10 +47,13 @@ apt install borgbackup
 Исходя из этого требуется создать данного системного пользователя с соответствующей домашней директорией и подготовить структуру домашней директории для организации доступа клиентов по ключам:
 
 ```ruby
+# Создаем домашний каталог и директрорию для ключей
 useradd -m borg
 mkdir ~borg/.ssh
 touch ~borg/.ssh/authorized_keys
 chown -R borg:borg ~borg/.ssh
+
+# Созадаем каталог /var/backup
 mkdir /var/backup
 chown borg:borg /var/backup/
 ```
@@ -72,6 +75,14 @@ apt install borgbackup
 ![image](https://github.com/user-attachments/assets/92e1dbed-3304-4e87-800c-be8055eae65d)
 
 
+```ruby
+ # Генерируем SSH-ключ
+ssh-keygen
+```
+![image](https://github.com/user-attachments/assets/64fc6cd2-0815-45b0-910f-248c91a8aee5)
+
+ После генерации ключа его нужно будет скопировать и разместить на сервере в файл /home/borg/.ssh/authorized_keys
+
 Запускаем Бэкап
 
 ```ruby
@@ -79,7 +90,6 @@ borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_
 ```
 
 ![image](https://github.com/user-attachments/assets/797d273a-0910-4b2f-8976-5c93fe0e8afd)
-![image](https://github.com/user-attachments/assets/64fc6cd2-0815-45b0-910f-248c91a8aee5)
 
 Смотрим, что у нас получилось
 
