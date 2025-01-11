@@ -19,10 +19,14 @@ Minim diam at ipsum tempor. Augue feugait luptatum in lorem tincidunt sed eros e
 
 Erat no euismod diam elitr diam erat velit. Diam kasd ipsum sit est laoreet diam commodo laoreet exerci congue hendrerit in vel et takimata accusam est. Elitr sanctus volutpat id at clita kasd et ut sit te et gubergren sadipscing eos takimata sadipscing.
 
+<br/>
+
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='1'>Тестовый стенд</a>
 
 ![image](https://github.com/user-attachments/assets/ecd995b2-da3f-4f61-b28d-fc495362a613)
 
+
+<br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='2'>Установка и настройка borgbackup</a>
 
@@ -33,6 +37,7 @@ sudo -i
 apt update
 apt install borgbackup
 ```
+
 <br/>
 
 ### [:diamond_shape_with_a_dot_inside:](#toc) <a name='3'>Устанавливаем borgbackup на сервер</a>
@@ -65,7 +70,6 @@ chown borg:borg /var/backup/
 
 Конфигурирование сервера на этом можно считать завершенным, за исключением того, что в дальнейшем потребуется добавить публичные клиентские ключи для доступа к borg серверу.
 
-<br/>
 
 <br/>
 
