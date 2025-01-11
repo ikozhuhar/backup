@@ -6,8 +6,9 @@
 2. [Установка и настройка borgbackup](#2)
 3. [Устанавливаем borgbackup на сервер ](#3)
 4. [Устанавливаем borgbackup на клиенте](#4)
-5. [Восстановление данных из резервной копии](#5)
-6. [Дополнительные источники](#recommended_sources)
+5. [Создание репозитория](#5)
+6. [Восстановление данных из резервной копии](#6)
+7. [Дополнительные источники](#recommended_sources)
 
 Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est lorem ipsum dolor sit amet.
 
@@ -81,12 +82,38 @@ ssh-keygen
 ![image](https://github.com/user-attachments/assets/92e1dbed-3304-4e87-800c-be8055eae65d)
 
 
- После генерации ключа его нужно будет скопировать и разместить на сервере в файл /home/borg/.ssh/authorized_keys
+После генерации ключа его нужно будет скопировать и разместить на сервере в файл /home/borg/.ssh/authorized_keys
 
-Запускаем Бэкап
+
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='5'>Создание репозитория</a>
+
+Инициализируем репозиторий borg на backup сервере с client сервера:
 
 ```ruby
+# Для создания простого (нешифрованного) репозитория ввести команду
+borg init -e none borg@192.168.56.160:/var/backup/
+
+# Для создания зашифрованного репозитория ввести команду
+borg init --encryption=repokey borg@192.168.56.160:/var/backup/
+```
+
+Если создание репозитория будет отклонено, то необходимо проверить:
+
+- наличие соединения с сервером по SSH (на клиенте выполнить команду `ssh user@192.168.56.160` );
+- права доступа для пользователя borg к своему домашнему каталогу (на сервере выполнить команду `chown -R borg:borg /home/borg` );
+- соответствие имени репозитория, указанного в команде с открытым ключом на сервере, фактическому имени создаваемого репозитория.
+
+После успешного выполнения команды, проверить на сервере наличие созданного репозитория.
+
+
+**Создание резервной копии**
+
+```ruby
+# Созадание копии всей директории
 borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_%H:%M:%S}" /etc
+
+# Создание копии отдельных файлов
+borg create --stats --list borg@192.168.56.160:/var/backup/::"etc-{now:%Y-%m-%d_%H:%M:%S}" /etc/shadow /etc/passwd /etc/group
 ```
 
 ![image](https://github.com/user-attachments/assets/797d273a-0910-4b2f-8976-5c93fe0e8afd)
@@ -109,7 +136,7 @@ borg list borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 ![image](https://github.com/user-attachments/assets/3ef67d64-35ae-43a2-84d0-9d4d02283aac)
 
 
-### [:diamond_shape_with_a_dot_inside:](#toc) <a name='5'>Восстановление данных из резервной копии</a>
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='6'>Восстановление данных из резервной копии</a>
 
 Перед восстановлением, рекомендуется создать отдельную директорию и перейти в нее:
 
@@ -127,8 +154,19 @@ borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46
 **Для восстановления отдельных файлов или директорий из архива ввести команду:**
 
 ```ruby
-borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 etc/passwd
+borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /etc/passwd /etc/shadow /etc/group
 ```
+
+Для примера попробуем восстановить файлы passwd, shadow, group и помотрим что у нас получилось.
+
+![image](https://github.com/user-attachments/assets/c2a3bf95-9a30-4390-ad4f-74c84e325452)
+
+```ruby
+batcat ./etc/passwd
+```
+![image](https://github.com/user-attachments/assets/8a51af50-4125-48ae-bed1-6d54c79609d5)
+
+
 
 **Монтирование резервной копии в локальную папку (альтернативный вариант восстановления данных)**
 
