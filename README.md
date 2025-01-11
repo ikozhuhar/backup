@@ -4,8 +4,8 @@
 
 1. [Тестовый стенд](#1)
 2. [Установка и настройка borgbackup](#2)
-3. [Создание unit-файла для мониторинга логов](#create_unit_file)
-4. [Установить spawn-fcgi и создать unit-файл](#create_init_spawn)
+3. [Устанавливаем borgbackup на сервер ](#3)
+4. [Устанавливаем borgbackup на клиенте](#4)
 5. [Дополнительные источники](#recommended_sources)
 
 Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est lorem ipsum dolor sit amet.
@@ -19,48 +19,56 @@ Erat no euismod diam elitr diam erat velit. Diam kasd ipsum sit est laoreet diam
 ![image](https://github.com/user-attachments/assets/ecd995b2-da3f-4f61-b28d-fc495362a613)
 
 
-### Установка и настройка borgbackup
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='2'>Установка и настройка borgbackup</a>
 
 Установка как на сервере, так и на клиенте выполняется одинаково:
+
+```ruby
+sudo -i
+apt update
+apt install borgbackup
+```
+<br/>
+
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='3'>Устанавливаем borgbackup на сервер</a>
+
 ```ruby
 sudo -i
 apt update
 apt install borgbackup
 ```
 
-
-### Устанавливаем borgbackup на сервер 
-
-```
-apt install borgbackup
-```
-
 ![image](https://github.com/user-attachments/assets/8e4b67df-7ecf-43d9-a74b-7194cb55dcb6)
 
+Все действия системы ПО borgbackup выполняются от имени пользователя borg (не путать с операциями конфигурирования и управления самого ПО - они выполняются от имени root).
+
+Репозитории хранения данных borg располагает в своей домашней директории.
+
+Исходя из этого требуется создать данного системного пользователя с соответствующей домашней директорией и подготовить структуру домашней директории для организации доступа клиентов по ключам:
+
+```ruby
+useradd -m borg
+mkdir ~borg/.ssh
+touch ~borg/.ssh/authorized_keys
+chown -R borg:borg ~borg/.ssh
+mkdir /var/backup
+chown borg:borg /var/backup/
 ```
-sudo mkdir /var/backup
-sudo useradd -s /bin/bash -d /home/borg -m borg
-sudo chown borg:borg /var/backup/
-sudo passwd borg
-su - borg
-mkdir .ssh
-touch .ssh/authorized_keys
-chmod 700 .ssh
-chmod 600 .ssh/authorized_keys
+
+Конфигурирование сервера на этом можно считать завершенным, за исключением того, что в дальнейшем потребуется добавить публичные клиентские ключи для доступа к borg серверу.
+
+<br/>
+
+
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='4'>Устанавливаем borgbackup на клиенте</a>
 
 ```
-
-
-
-### Устанавливаем borgbackup на клиенте
-
-```
+sudo -i
+apt update
 apt install borgbackup
 ```
 
 ![image](https://github.com/user-attachments/assets/1ec2760a-1729-4db1-a221-f01155998567)
-
-
 ![image](https://github.com/user-attachments/assets/92e1dbed-3304-4e87-800c-be8055eae65d)
 
 
