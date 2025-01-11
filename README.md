@@ -252,3 +252,4 @@ rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
 
 - [Установка и настройка BORG backup](https://www.bytelink.ru/byte-wiki/rezervirovanie-i-backups/ustanovka-i-nastrojka-sistemy-rezervnykh-kopij-borg)
 - [Теория и практика бэкапов с Borg](https://habr.com/ru/companies/flant/articles/420055/)
+- [Backup с помощью systemd вместо cron](https://ekhlakov.blogspot.com/2014/04/backup-systemd-cron.html)
