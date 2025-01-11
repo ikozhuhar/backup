@@ -209,7 +209,8 @@ borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /mnt/borg
 ```ruby
  vi /etc/systemd/system/borg-backup.service
 ```
-![image](https://github.com/user-attachments/assets/2b4c1ba0-db3e-4983-ad09-97348b47300f)
+![image](https://github.com/user-attachments/assets/9471c7cb-e1f2-440a-b275-1cca836e919c)
+
 
 ```ruby
 vi /etc/systemd/system/borg-backup.timer
