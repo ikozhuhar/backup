@@ -129,7 +129,7 @@ borg extract borg@192.168.56.160:/var/backup/::etc-2025-01-11_11:12:46 /mnt/borg
 
 ### Ручное копирование
 
-```
+```ruby
 rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
 ```
 
@@ -138,7 +138,7 @@ rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
 
 #### [[⬆]](#toc) <a name='recommended_sources'>Дополнительные источники</a>
 
-- [Systemd - Википедия](https://ru.wikipedia.org/wiki/Systemd)
+- https://www.bytelink.ru/byte-wiki/rezervirovanie-i-backups/ustanovka-i-nastrojka-sistemy-rezervnykh-kopij-borg
 - [Система инициализации - systemd](https://basis.gnulinux)
 - [Systemd. Библия сисадмина](https://habr.com/ru/companies/)
 - [Что такое система инициализации](https://pikabu.ru/story)
