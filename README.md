@@ -10,7 +10,7 @@
 6. [Создание резервной копии](#6)
 7. [Восстановление данных из резервной копии](#7)
 8. [Автоматизация создания бэкапов с помощью systemd](#8)
-9. [Ручное копирование](#9)
+9. [Ручное резервное копирование](#9)
 10. [Дополнительные источники](#recommended_sources)
 
 Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est lorem ipsum dolor sit amet.
@@ -247,7 +247,7 @@ systemctl list-timers --all
 
 <br/>
 
-### [:diamond_shape_with_a_dot_inside:](#toc) <a name='9'>Ручное копирование</a>
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='9'>Ручное резервное копирование</a>
 
 ```ruby
 rsync -avz -e ssh --delete ./1111111  vagrant@192.168.56.30:~
