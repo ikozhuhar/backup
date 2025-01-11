@@ -1,4 +1,6 @@
-Резервное копирование
+<p align="center">
+<img src="https://github.com/ikozhuhar/backup/blob/main/img/backup.png">
+</p>
 
 #### <a name='toc'>Содержание</a>
 
