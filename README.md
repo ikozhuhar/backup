@@ -27,7 +27,7 @@
 
 <br/>
 
-### [:diamond_shape_with_a_dot_inside:](#toc) <a name='2'>Установка и настройка borgbackup</a>
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='2'>Установка borgbackup</a>
 
 Установка как на сервере, так и на клиенте выполняется одинаково:
 
@@ -39,7 +39,7 @@ apt install borgbackup
 
 <br/>
 
-### [:diamond_shape_with_a_dot_inside:](#toc) <a name='3'>Устанавливаем borgbackup на сервер</a>
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='3'>Установка borgbackup на сервер</a>
 
 ```ruby
 sudo -i
@@ -72,7 +72,7 @@ chown borg:borg /var/backup/
 
 <br/>
 
-### [:diamond_shape_with_a_dot_inside:](#toc) <a name='4'>Устанавливаем borgbackup на клиенте</a>
+### [:diamond_shape_with_a_dot_inside:](#toc) <a name='4'>Установка borgbackup на клиенте</a>
 
 ```
 sudo -i
